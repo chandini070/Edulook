@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduLook | Learn Smarter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #007BFF;
+      --light-blue: #E6F0FF;
+      --dark-blue: #004AAD;
+      --white: #ffffff;
+      --text-dark: #222;
+      --sky-blue: #cce7ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.6; }
+
+    header { background: darkblue; padding: 15px 30px; color: white; position: sticky; top: 0; z-index: 1000; }
+    .nav-container { display: flex; align-items: center; gap: 20px; }
+    .nav-logo { font-size: 1.8rem; font-weight: 700; margin-right: 20px; }
+    nav { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: white; font-weight: 500; transition: color 0.3s ease; }
+    nav a:hover { color: #dff0ff; }
+
+    .languages-bar { background: var(--sky-blue); padding: 10px 20px; display: flex; gap: 20px; justify-content: center; font-weight: 600; }
+    .languages-bar a { color: var(--dark-blue); text-decoration: none; }
+    .languages-bar a:hover { text-decoration: underline; }
+
+    .main-layout { display: flex; margin: 20px; }
+    .sidebar { width: 250px; background: var(--light-blue); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .sidebar h3 { margin-bottom: 15px; color: var(--dark-blue); }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { margin: 10px 0; font-size: 0.95rem; cursor: pointer; color: var(--text-dark); }
+    .sidebar ul li:hover { text-decoration: underline; color: var(--blue); }
+
+    .content { flex: 1; padding: 20px; margin-left: 20px; border: 1px solid #ddd; border-radius: 8px; }
+    .content h2 { color: var(--blue); margin-bottom: 15px; }
+    ul { padding-left: 40px; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">EduLook</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Tutorials</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Languages Bar -->
+  <div class="languages-bar">
+    <a href="#">C</a>
+    <a href="#">DBMS</a>
+    <a href="#">SQL</a>
+    <a href="#">Python</a>
+    <a href="#">HTML</a>
+    <a href="#">CSS</a>
+    <a href="#">Java</a>
+  </div>
+
+  <!-- Layout: Sidebar + Content -->
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>DBMS Syllabus</h3>
+      <ul>
+        <li onclick="showContent('intro')">Introduction to DBMS</li>
+        <li onclick="showContent('Data Models')">Data Models</li>
+        <li onclick="showContent('architecture')">Three Schema Architecture</li>
+        <li onclick="showContent('entity')">Entity-Relationship</li>
+        <li onclick="showContent('relational')">Relational Model</li>
+        <li onclick="showContent('algebra')">Algebra & Relational Calculus</li>
+        <li onclick="showContent('SQL')"> SQL</li>
+         <li onclick="showContent('Normalization')">Normalization </li>
+          <li onclick="showContent('NoSQL Databases ')">NoSQL Databases  </li>
+           <li onclick="showContent('PL/SQL')"> DBMS Interview Questions </li>
+      </ul>
+    </div>
+  
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Tab 1 -->
+      <div id="intro" class="tab-content active">
+        <h2>Introduction to DBMS</h2>
+        <p>
+         <b>Database Management Systems(DBMS) </b>are a systematic approach to <u>storing and maintaining databases</u>; they create an environment in which users may save and retrieve data securely. DBMS also supports other administration functions such as alter/modify/change management, disaster recovery, compliance, and performance monitoring, among others. <br>The Database Management System, as the name implies, is divided into two parts: <b><br>.Database<br>.Management system.</b>
+        </p>
+        <br>
+        <p style="text-indent:50px;">
+          The term <b>"database" </b>has been clearly defined as <u>a small collection of electronic information that may be processed to provide meaningful information.</u> Data can be generated, retrieved, updated, managed, controlled, and structured to perform a variety of data-processing processes. Data is frequently <strong>stored across rows and columns to create tables because tables-wise data may be highly useful for query processing activities and data querying efficiency.</strong> The databases will be constructed using the following rules:<br> - object-oriented <br> - relational <br> - distributed <br> - hierarchical<br>- network  and others.<br> In corporate and industrial applications, databases may be used to store and gather information, as well as to perform different logical and relational operations for a variety of activities in order to provide companies with the technical solutions they require.
+        </p>
+        <img src="https://i.postimg.cc/sX7gYM90/dbms.png" alt="dbms" width="700" height="200" style="display: block; margin: auto; width: 300px;"><br>
+        <br>
+        <h2>Characteristics of DBMS</h2>
+      <ul style="padding-left: 40px;">
+        <li><b> Data Abstraction-</b>Hides the complexity of data storage and presents data to users at different levels (physical, logical, and view level).</li>
+        <li><b>Backup and Recovery-</b> To safeguard against data loss due to system failures or unexpected events, the database approach incorporates backup and recovery.</li>
+        <li><b>Data Independence-</b> Changes in storage structure or access methods do not affect how users interact with the data.</li>
+        <li><b>Efficient Data Access-</b>DBMS uses indexing, query optimization, and caching to retrieve data quickly.</li>
+         <li><b>Data Security-</b>Provides access control and authentication so that only authorized users can access or modify data.</li>
+          <li><b>Concurrency Control-</b>Allows multiple users to access the database simultaneously without conflicts or data loss.</li>
+           <li><b>ACID Properties-</b>Supports Atomicity, Consistency, Isolation, and Durability to maintain reliable transactions.</li>    
+      </ul>
+      <br>
+      <h2>Database vs File System</h2>
+      <h3>Database:-</h3><p>A database is a structured, organized, and electronic collection of data designed for easy storage, retrieval, and management. It's controlled by a Database Management System (DBMS), which acts as an intermediary between the data and users or applications. Databases contain various data types, such as text, numbers, images, and files, often organized into tables with rows and columns. They are essential for businesses and organizations to handle large volumes of information efficiently, making data accessible and actionable.<br><h3>File system:-</h3>A file system is the method an operating system uses to store, organize, and manage data on a storage device, like a hard drive or SSD. It acts as a "librarian" that structures information into files and directories (folders) in a hierarchical structure, making it possible for users and applications to store, find, and retrieve data efficiently. Common file systems include NTFS for Windows, APFS for macOS, and ext4 (an Extended File System) for Linux. </p>
+      <br><br>
+      <table>
+        <tr>
+          <th>Database</th>
+          <th>File System</th>
+        </tr>
+       <table border="2" cellpadding="10" cellspacing="5">
+    <tr>
+      <th>Aspect</th>
+      <th>Database (DBMS)</th>
+      <th>File System</th>
+    </tr>
+    <tr>
+      <td>Purpose</td>
+      <td>Stores structured data with queries and relationships.</td>
+      <td>Stores raw files (documents, images, binaries).</td>
+    </tr>
+    <tr>
+      <td>Data Model</td>
+      <td>Tables, schema, keys, constraints.</td>
+      <td>Files and directories only.</td>
+    </tr>
+    <tr>
+      <td>Querying</td>
+      <td>SQL / APIs allow complex search & retrieval.</td>
+      <td>Limited to file name or path search.</td>
+    </tr>
+    <tr>
+      <td>Transactions</td>
+      <td>Supports ACID transactions.</td>
+      <td>No built-in transaction support.</td>
+    </tr>
+    <tr>
+      <td>Concurrency</td>
+      <td>Handles multiple users via locks/MVCC.</td>
+      <td>Basic OS file locking only.</td>
+    </tr>
+    <tr>
+      <td>Indexing</td>
+      <td>Provides indexing for faster queries.</td>
+      <td>No indexing beyond directory structure.</td>
+    </tr>
+    <tr>
+      <td>Data Integrity</td>
+      <td>Ensures integrity via keys & constraints.</td>
+      <td>No automatic integrity checks.</td>
+    </tr>
+    <tr>
+      <td>Backup & Recovery</td>
+      <td>Automated backups and recovery tools.</td>
+      <td>Manual file copies are needed.</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Granular access control and roles.</td>
+      <td>Simple read/write/execute permissions.</td>
+    </tr>
+    <tr>
+      <td>Examples</td>
+      <td>Banking, inventory, order management.</td>
+      <td>Storing images, documents, software files.</td>
+    </tr>
+  </table><br><br>
+  <h2>Advantages and Disadvantages of Database</h2>
+  <p>Data is becoming a crucial component of any firm. Regardless of the industry—healthcare, communications, retail, or entertainment—businesses are harnessing data to provide their clients with amazing experiences. However, handling such a large amount of data is a difficult task. In this case, the DBMS is an effective remedy. Real-time data access, data security, and ease are all made possible by DBMS.</p><br>
+<ul ><h2>Advantages of Database</h2>
+  <li> <b> Data Organization:</b> Databases provide structured storage, making data management efficient.</li>
+  <li><b>Data Integrity: </b>Constraints (like primary keys, foreign keys) ensure data accuracy and consistency.</li>
+  <li><b>. Data Security:</b> Features like access control, encryption protect sensitive data.</li>
+  <li><b> Data Sharing: </b>Multiple users/applications can access data concurrently.</li>
+  <li><b>Scalability:</b> Many databases support scaling for growing data/applications.</li>
+  <li><b>Consistency:</b>ACID properties (Atomicity, Consistency, Isolation, Durability) ensure transaction reliability.</li>
+  <li><b>Query Efficiency:</b> SQL and other query languages enable fast data retrieval.</li><br>
+  <h2>Disadvantages of Database</h2>
+  <li><b>Complexity:</b> Designing and managing databases can be complex.</li>
+    <li><b>Cost:</b> Commercial databases can be expensive (licensing, hardware).</li>
+      <li><b>Performance Issues:</b> Poor design/indexing can lead to slow queries.</li>
+        <li><b>Security Risks:</b> Databases are targets for attacks (SQL injection, breaches).</li>
+          <li><b>Downtime:</b> Maintenance/upgrades might require downtime.</li>
+            <li><b>Resource Consumption:</b> Databases consume server resources (CPU, RAM, storage).</li>
+</ul><br><br>
+<h2>Data Independence</h2><p>Think of upgrading your smartphone without losing your apps or all of the data tied to those applications. While the phone underwent hardware and system software changes, your apps suddenly worked. This is similar to how data independence works in a DBMS. In this case, changes are made to the database structure or physical storage of a database without disturbing the way users and applications interact with the database.<br>Data independence in DBMS is the ability to easily change one layer of a database engine, whether physical storage, logical structure (tables, relationships), or user views, without impacting other data systems.<br>There are 2 types:-<br><h3>Logical Data Independence </h3><h3>Physical Data Independence </h3>
+<h2>Logical Data Independence </h2>Logical Data Independence is the ability to change the logical structure of a database (like adding or splitting tables, modifying relationships) without affecting how users or applications access the data.<br>key point:-Changes to the logical schema do not require rewriting application code or external views.<br><h3>Example:-</h3>If the Employee(Name, Age, Department) table is split into two tables (Personal and Work), users can still query it as Employee if the external view remains unchanged.
+<h2>Physical Data Independence</h2>Physical Data Independence refers to the ability to change the internal storage or indexing of the database without affecting the logical structure or application queries.<br>key point:-Internal changes (e.g., file organization, indexing, disk location) do not impact how users or programs interact with the data.<br><h3>Example:-</h3>another disk, queries like
+SELECT * FROM Student WHERE ID = 101 still work exactly the same.
+</p>
+</p>
+</div>
+   <!-- Tab 2: Placeholder -->
+      <div id="Data Models" class="tab-content">
+        <h2>Data Models in Database</h2>
+        <p><b>Database models</b> in the Database Management System explain the logic behind the structure of a Database system that should usually include all the tables, which are represented as entities in the ER model, the relationships between the tables and objects, and the requirement provided by the project team to settle on how data can be stored and accessed, granted the aimed Database System needs to be designed concerning the rules and notions of the given data model the Database.</p><br><img src="https://cdn.educba.com/academy/wp-content/uploads/2021/04/DBMS-Models.png"alt="flowchart"style="display: block; margin: auto;"><br><ul>
+          <h2>1 Object-Based Logical Models</h2>
+          <p>An Object-Oriented Data Model (OODM) is <b>a way of organizing data where information is stored as objects.</b> These objects represent real-world entities and combine both data and relationships within a single structure.<br> There are 3 sub groups in object-Based Model:-<br></p>
+          <li>The Entity-Relationship Model</li>
+          <li>The Object-Oriented Model</li>
+          <li>Hierarchical Model</li>
+          <li>Network Model</li>
+          <li>Relational Model</li>
+          <li>NoSQL Model</li>
+          <h3>a.The Entity-Relationship Model</h3><p>An Entity-Relationship Model (ER Model) is a high-level conceptual data model used to design and represent the structure of a database. It shows how data is connected, stored, and organized before it is implemented in a Database Management System (DBMS).</p><br><h3>Key components </h3>
+          <ol>
+        <li>Entity
+            <ul>
+                <li>An item or thing in the actual world with a separate existence.</li>
+                <li>Example: Student, Teacher, Course</li>
+                <li>Represented by rectangles.</li>
+            </ul>
+        </li>
+        <li>Attributes
+            <ul>
+                <li>Properties or characteristics of entities.</li>
+                  <li>Example: Student → Name, Roll No, Age</li>
+                    <li>Represented by ellipses (ovals).</li>
+            </ul>
+        </li>
+        <li>Entity Types
+            <ul>
+                <li>Strong Entity: Exists independently (e.g., Student).</li>
+                <li>Weak Entity: Cannot exist without a strong entity (e.g., Exam Result depends on Student).</li>
+            </ul>
+        </li>
+         <li>Relationships
+            <ul>
+                <li>Associations between entities.</li>
+                <li>Example: Student "enrolls in" Course.</li>
+                <li>Represented by diamonds (rhombus).</li>
+            </ul>
+        </li>
+         <li>
+            <ul>Relationship Types
+                <li>One-to-One (1:1): One entity relates to only one entity of another type.</li>
+                 <li>One-to-Many (1:N): One entity relates to many entities of another type.</li>
+                  <li>Many-to-Many (M:N): Many entities relate to many entities of another type.</li>
+            </ul>
+        </li>
+    </ol><br><img src="https://media.geeksforgeeks.org/wp-content/uploads/20230428115454/Introduction-to-ER-Model-2-768.webp"alt="flowchart"style="display: block; margin: auto;"><br><h3>Example diagram</h3><br><img src="https://www.learncomputerscienceonline.com/wp-content/uploads/2020/11/Entity-Relationship-Diagram-.jpg"<br>
+    <h3>b.The Object-Oriented Model</h3><br><p>The Object-Oriented Data Model is a way of representing data in a database using the principles of Object-Oriented Programming (OOP).<br>It combines the concepts of:<br>-Objects (like real-world entities)<br>-Classes (blueprints of objects)<br>-Inheritance<br>-Encapsulation<br>-Polymorphism<br>This model is commonly used in Object-Oriented Databases (OODBMS) and in programming languages like Java, C++, Python.</p><br><h3>Example</h3><br><img src="https://1.bp.blogspot.com/-o9z7CnB8pnk/YGMacrrjc7I/AAAAAAAAA_k/le-zvXRdWuwNvYfJVRhn6sw7IjtHhbfowCLcBGAsYHQ/s1033/object-oriented.png"height="200"width="500"><br>
+    <br><h2>2 Record-Based Logical Models</h2><br><p>Record-based logical models structure a database into fixed-format records, each containing fields or attributes, to define the database's logical structure at the conceptual and view levels. These models provide a more intuitive user-level view of the data than physical storage, with the Relational, Network, and Hierarchical models being the most well-known examples. </p><br><h3>Example:-</h3><br><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200824121557/349.png"><br>
+        <h3>a. Hierarchical Model</h3><br><p> •	The hierarchical database model organizes data into a tree-like structure, with a single root, to which all the other data is linked.<br>•	The hierarchy starts from the Root data, and expands like a tree, adding child nodes to the parent nodes.In this model, a child node will only have a single parent node.<br>•	This model efficiently describes many real-world relationships like the index of a book, etc.<br>•	Data is organized into a tree-like structure with a one-to-many relationship between two different types of data, for example, one department can have many courses, many teachers, and of course many students</p><h3>Example:-</h3><img src="https://i.pinimg.com/originals/c8/4c/e2/c84ce283c253e16a4b8d361d8ef10ea3.png">
+<br>    <h3>b.Network Model </h3><br><p> •	The Network Model is an extension of the Hierarchical model.<br>•	In this model, data is organized more like a graph, and allowed to have more than one parent node.<br>•	In the network database model, data is more related as more relationships are established in this database model.	Also, as the data is more related, hence accessing the data is also easier and fast.<br>•	This database model uses many-to-many data relationships.•	Integrated Data Store (IDS) is based on this database model.<br>•	The implementation of the Network model is complex, and it's very difficult to maintain it.<br>•	The Network model is difficult to modify also.•	You may want to explore this if you are developing some social networking applications, although the Graph Database model is new and is far better than the Network Database model<br><h3>Example:-</h3>University Database•	In a university, students enroll in multiple courses, and each course has multiple students. Also, professors can teach multiple courses, and a course can have more than one professor.</p><img src="https://d2myx53yhj7u4b.cloudfront.net/sites/default/files/ic-database-model-network.jpg">
+<br><h3>c.Relational Model</h3><p>•	In this model, data is organized in two-dimensional tables and the relationship is maintained by storing a common field.<br>•	This model was introduced by E.F Codd in 1970, and since then it has been the most widely used database model.<br>•	The basic structure of data in the relational model is tables. All the information related to a particular type is stored in rows of that table.<br>•	Hence, tables are also known as relations in the relational model<br>•	Some of the most popular databases are based on this database model. For example, Oracle, MySQL, etc.<br><h3>Example:-</h3>Online Shopping System•	In an online shopping platform like Amazon:•	Customers table stores customer details (CustomerID, Name, Email)•	Orders table stores order info (OrderID, CustomerID, OrderDate)•	Products table stores product data (ProductID, Name, Price)•	OrderDetails links orders and products (OrderID, ProductID, Quantity)•	These tables are related using primary and foreign keys, making it easy to manage and query data using SQL, which is the core of the relational model.<img src="https://raw.githubusercontent.com/gulvaibhav20/assets/master/Scaler/Relational_Model/Table.jpg"</p>
+<br><h2>NoSQL Model</h2><p>•	The NoSQL database model supports an unstructured style of storing data.<br>•	Data is stored as documents.<br>•	The documents look more like JSON strings or Key-value based object representations.<br>•	It provides a flexible schema.<br>•	It does provide features like indexing, relationships between data, etc.<br>•	The support for data querying is limited in the NoSQL database model.<br>•	This database model is well-suited for Big data applications, real-time analytics, CMS (Content Management systems), etc.<br><h3>Example:-</h3>Facebook Messenger•	Facebook Messenger uses NoSQL databases (like Apache Cassandra) to handle massive amounts of real-time chat messages.•	Messages are stored as key-value pairs or JSON documents.•	The system can scale horizontally to support millions of users chatting at the same time.•	NoSQL handles unstructured and semi-structured data efficiently, which is ideal for chat, media, and user metadata.<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtgkmFp6vKrJ9Cg1Fsbd712BM_AnYlKOGaaA&s"height="200"width="500"></p>
+<br><h2>3.Physical Models</h2><br><p>The Physical Data Model represents how data is actually stored in the database system.It is the lowest level of data abstraction (compared to Conceptual and Logical models).<br>It describes:<br>-Actual tables, columns, datatypes<br>-Primary keys (PK), Foreign keys (FK), Indexes<br>-Storage details (files, partitions, etc.)<br>-Constraints (NOT NULL, UNIQUE, CHECK)</p><img src="https://vertabelo.com/blog/how-to-create-physical-data-model/1.png">
+        </ul></div><br>
+      <!-- Tab 3: Placeholder -->
+      <div id="architecture" class="tab-content">
+        <h2>Three Schema Architecture</h2>
+        <p><b>The three-schema architecture,</b> also known as the three-level architecture or three levels of abstraction, is a fundamental concept in Database Management Systems (DBMS) that separates the user applications from the physical database. This architecture aims to achieve data independence and allows for flexibility in database design and management.<br>The three schemas are:<br><h3>External Schema (View Level):</h3>-This level represents the individual user's view of the database.<br>-It presents a customized and simplified view of the data, tailored to the specific needs and access privileges of different user groups or applications.<br>-It hides irrelevant details and presents only the data and relationships that are pertinent to a particular user or application.<br>
+        <h3>Conceptual Schema (Logical Level):</h3>-This level describes the logical structure of the entire database as seen by the database administrator.<br>-It defines all entities, attributes, relationships, and constraints within the database, without specifying how the data is physically stored.<br>-It provides a unified and global view of the database, integrating all external schemas.<br><h3>Internal Schema (Physical Level):</h3>-This level defines how and where the data is physically stored and accessed on the storage devices.<br>-It describes the physical storage structure, including file organization, indexing techniques, data compression, and storage allocation details.<br>-This schema is concerned with the efficient storage and retrieval of data and is typically managed by the DBMS itself.</p>
+       <img src="https://cdn.prod.website-files.com/605c9e03d6553a5d82976ce2/6682ff342ba8f7cdfef975fa_1*Mld5pLhDxJcI_WYx1jab9w.png" alt="flowchart"style="display: block; margin: auto; width: 500px; height: auto;"><br><h3>Some Examples:-</h3><br>
+       <p>Online Shopping Website (like Amazon/Flipkart<br><b>1. Internal Schema (Physical Level)</b><br>Data is stored in databases and servers.<br>-Customer details stored in customers_table with columns like cust_id, name, email, password (encrypted).<br>-Product details stored in products_table with prod_id, name, price, stock.<br>-Orders stored in orders_table with order_id, cust_id, prod_id, date.<br>-At this level, the system cares about indexes, storage location, file structure, B-trees, hashing, etc.
+      <br><b>2.Conceptual Schema (Logical Level):</b><br>This is the overall logical design of the database.<br>-A Customer can place many Orders.<br>- Each Order contains one or more Products.<br>-Customer (cust_id, name, email)<br>-Order (order_id, cust_id, date)<br>-Relationship: Customer --places--> Order --contains--> Product <br><b>3.External Schema (View Level):</b><br>-Different users see different views of the same data.<br>-Customer view: sees only their profile, orders, and product catalog.<br>-Admin view: sees all customers, all orders, stock levels, and revenue reports.<br>-Delivery person view: sees only delivery-related info (order ID, customer address, status).</p><br><br>
+      <h2>Database Users</h2><p>•	A database user is a person who interacts with a database to read, update, or manage data.Different users have specific roles to ensure smooth functioning and efficient data handling.They help in storing, accessing, retrieving, and managing data within the system.<br>There is different types of users they are:-<br>
+        <ul style="padding-left: 40px;">
+        <li><b>Database Administrator (DBA)</b></li>
+         <li><b>Naive / Parametric End Users</b></li>
+          <li><b>System Analysts</b></li>
+           <li><b>Sophisticated Users</b></li>
+            <li><b>Database Designers</b></li>
+             <li><b>Application Programmers</b></li>
+              <li><b>Casual Users / Temporary Users</b></li>
+               <li><b>Specialised Users</b></li><br>
+      </ul><h3>1.Database Administrator (DBA)</h3><p style="text-indent:50px;">A Database Administrator holds an important position in any DBMS environment. DBAs are usually charged with the responsibility of maintaining the health as well as high performance of the database. They guarantee the proper functioning and protection of the database.<br>•	Key Responsibilities:<br>•	Schema Definition: DBAs define the structure of the database, including tables, indexes, and relationships.<br>•	Security Management: They set up user accounts, manage access permissions, and ensure that data is protected from unauthorised access.<br>•	Performance Monitoring: DBAs continuously monitor the database’s performance and optimise it for speed and efficiency.<br><img src="https://www.scylladb.com/wp-content/uploads/database-administrator-diagram.png" height="500"width="1000"><h3><b>Example:</b></h3>Imagine managing an international shipping company’s logistics system. Here, a DBA would ensure that all shipping records, tracking information, and customer data are correctly stored, easily accessible, and secure.</p>
+      <br><h3>2.Naive / Parametric End Users</h3><p style="text-indent:50px;">•	Naive or Parametric End Users are those who interact with the database without having any deep knowledge of its inner workings. They rely on pre-developed applications to perform their tasks. These database users in DBMS are typically focused on completing specific, often repetitive tasks.<br>Key Responsibilities:-<br>•	No DBMS Knowledge: They do not need to understand how the database works.<br>•	Use Pre-Developed Applications: Interaction with the database is through applications with user-friendly interfaces.<br>•	Task-Oriented: Their primary focus is on performing specific tasks, like data entry or retrieval.<h3>Example:-</h3>A customer on Amazon searching for a product, adding it to the cart, and ordering.<br>A bank customer withdrawing cash from an ATM (they just press buttons; they don’t know about SQL queries or schema).<br>A student logging into their college portal to check marks.</p>
+        <br><h3>3.System Analysts</h3><p style="text-indent: 50px;">•	System Analysts come in the middle of end users and the technical support staff. They understand the requirements of the users and translate them into technical needs for the database designers and programmers.<br>•	Key Responsibilities:-<br>•	Requirements Analysis: Understanding and documenting what the users need from the database.<br>•	Feasibility Studies: Assessing whether the requirements can be met within the constraints of time, budget, and technology.<br>•	Design Oversight: Ensuring that the database design meets the specified requirements.<img src="https://www.a1qa.com/wp-content/uploads/2016/09/business-analyst.png"><br><h3>Example:-</h3>A system analyst working on an online learning platform needs to compile a list of requirements from the teachers and students. This includes but is not limited to managing the course content, student enrollment, and the track progress among the learners.</h3></p>
+        <br><h3>4.Sophisticated Users</h3><p style="text-indent: 50px;">•	Sophisticated Users are those who have a deeper understanding of the DBMS. They can directly interact with the database using complex queries and tools. These database users in DBMS often include data analysts, scientists, and engineers who need detailed and flexible access to the data.<br>•	Key Responsibilities:<br>•	Advanced Knowledge: They understand SQL and other query languages<br>•	Direct Interaction: They use tools and interfaces to run queries, generate reports, and perform complex data analysis.<br>•	Direct Interaction: They use tools and interfaces to run queries, generate reports, and perform complex data analysis.<br>•	Flexible Data Access: They need the ability to manipulate and retrieve data in various ways to suit their needs.<h3>Example:-</h3>Accountants could employ SQL to sort through the numerous records of a particular company’s sales database and produce highly reliable and detailed financial statements and projections. It enables them to pull out certain data and calculate and analyse trends all from a database.</p>
+        <br><h3>5.Database Designers</h3><p style="text-indent: 50px;">•	Database Designers are greatly involved in the creation of the basic structure of any DBMS. They are responsible for the task of determining the structural framework of the database compliance to various conditions and optimum execution. Their duties entail a lot of planning and designing to ensure that the database meets the needs of the organisation.<br>•	Key Responsibilities:<br>•	Creating Database Structures: This includes defining tables, indexes, views, triggers, and constraints. These elements are the building blocks of any database.<br>•	Ensuring Data Integrity: Database designers implement rules and constraints that maintain the accuracy and consistency of the data.<br>•	Optimising Data Storage: They design databases in a way that optimises storage and retrieval times.<img src="https://home.iscte-iul.pt/~hro/RUPSmallProjects/core.base_rup/roles/rup_database_designer_524DC34F.jpg"height="400"width="800"><br><h3>Example:-</h3>Consider a database designer working on an e-commerce platform. They need to create tables for products, customers, orders, and reviews. Each table must be linked in a way that queries can be run efficiently, like retrieving a customer’s order history or managing inventory levels.</p>
+        <br><h3>6.Application Programmers</h3><p style="text-indent: 50px;">•	Application programmers, or Back-End Developers as they are often called, are the people who sit down and write the actual code that interacts with the database. They develop applications that enable the user to carry out different operations on the data and guarantee that they are intuitive and effective.<br>•	Key Responsibilities:<br>•	Developing Applications: Writing code to build applications that interact with the database<br>•	Maintaining Code: Regularly updating and debugging applications to ensure they run smoothly.<br>•	Optimising Performance: Ensuring that the applications are optimised for speed and efficiency.<br>•	User Support: Providing support and updates to ensure that user needs are met effectively.<h3>Example:-</h3>Suppose software developers have been asked to create a mobile banking application. They have to provide a code through which the user can view his/her balance, transfer money, or review his/her transactions. This means that the app should be fast, highly secure, and convenient in its usage facets.</p>
+        <br><h3>7.Casual Users / Temporary Users</h3><p style="text-indent: 50px;">•	Casual Users, also known as Temporary Users, interact with the database occasionally and for specific purposes. They usually require the database for tasks that do not occur on a daily basis but are crucial when needed<br>Key Responsibilities:<br>•	Occasional Access: They access the database intermittently, often to gather specific information.<br>•	User-Friendly Interfaces: They rely on interfaces that are easy to use and understand without needing in-depth knowledge of the DBMS.<br>•	Specific Tasks: Their interaction is task-oriented, such as generating reports or retrieving specific data.<h3>Example:-</h3>A marketing manager might be a casual user who accesses the database quarterly to generate reports on sales performance and customer demographics</p>
+        <br><h3>8.Specialised Users</h3><p style="text-indent: 50px;">•	Specialised Users can be defined as the individual who needs databases to fulfil specific, and frequently demanding purposes. These database users in DBMS are the ones that require unconventional data processing and need specific applications to accomplish this task.<br>•	Key Responsibilities:<br>•	Developing Specialized Applications: Writing and maintaining applications that perform specialised functions<br>•	Complex Data Processing: Handling data that requires advanced processing techniques.<br>•	Customised Solutions: Providing solutions tailored to unique requirements that do not fit into conventional data processing frameworks.<h3>Example:-</h3>Researchers in a biotechnology firm might use a specialised database to manage and analyse genetic data. This data requires complex algorithms to process and derive meaningful insights.</p></p>
+         </div>
+        <!-- Tab 4: Placeholder -->
+      <div id="entity" class="tab-content">
+        <h2>Entity-Relationship Model</h2>
+        <p>An Entity–relationship model (ER model) describes the structure of a database with the help of a diagram, which is known as Entity Relationship Diagram (ER Diagram). An ER model is a design or blueprint of a database that can later be implemented as a database. The main components of E-R model are: entity set and relationship set. Facts about ER Diagram Model: ER model allows you to draw Database Design It is an easy to use graphical tool for modeling data Widely used in Database Design It is a GUI representation of the logical structure of a Database It helps you to identifies the entities which exist in a system and the relationships between those entities.<br><h3>Why use ER Diagrams? </h3>Here, are prime reasons for using the ER Diagram Helps you to define terms related to entity relationship modeling Provide a preview of how all your tables should connect, what fields are going to be on each table Helps to describe entities, attributes, relationships ER diagrams are translatable into relational tables which allows you to build databases quickly ER diagrams can be used by database designers as a blueprint for implementing data in specific software applications<br><h3>Example:-</h3>A simple ER Diagram: In the following diagram we have two entities Student and College and their relationship. The relationship between Student and College is many to one as a college can have many students however a student cannot study in multiple colleges at the same time. Student entity has attributes such as Stu_Id, Stu_Name & Stu_Addr and College entity has attributes such as Col_ID & Col_Name.<br><img src="https://beginnersbook.com/wp-content/uploads/2015/04/E-R-Diagram.png"<br><img src="https://opendsa.cs.vt.edu/ODSA/Books/Database/html/_images/ErdComponents.png"</p>
+        <h2>Entity</h2><p>Entity An entity is an object or component of data. An entity is represented as rectangle in an ER diagram. For example: In the following ER diagram we have two entities Student and College and these two entities have many to one relationship as many students study in a single college. We will read more about relationships later, for now focus on entities., Attributes, and Entity Sets.<br><img src="https://content-media-cdn.codefinity.com/courses/5ac24d9d-4a16-45b3-8856-07dec028c5e9/Section+1/ERM_Example%404x-8.png"height="200"width="400"><h3>Weak Entity: </h3>An entity that cannot be uniquely identified by its own attributes and relies on the relationship with other entity is called weak entity. The weak entity is represented by a double rectangle.<h3>Example:-</h3> A bank account cannot be uniquely identified without knowing the bank to which the account belongs, so bank account is a weak entity. <br><img src="https://michael-fuchs-sql.netlify.app/post/2021-03-03-entity-relationship-diagram-erd_files/p2p5.png"><h3>Strong entity</h3>A strong entity in a database is an entity that can be uniquely identified by its own attributes, without depending on any other entity It always has a primary key that distinguishes each record.It does not rely on another entity for identification.In an ER model, it is represented by a single rectangle.<h3>Example:-</h3>Student entity with attributes: Student_ID (PK), Name, Age. Here, Student_ID uniquely identifies each student, so Student is a strong entity.
+        <img src="https://afteracademy.com/images/difference-between-weak-and-strong-entity-strong-entity-example-png-8ce2636f9fc9bc26.jpg"height="200"width="400">
+        <h2>Attributes</h2>An attribute describes the property of an entity. An attribute is represented as Oval in an ER diagram. <br>There are four types of attributes:<br>1. Key attribute<br>2. Composite attribute<br>3. Multivalued attribute<br>4. Derived attribute <br><h3>1. Key attribute: </h3>A key attribute can uniquely identify an entity from an entity set. For example, student roll number can uniquely identify a student from a set of students. Key attribute is represented by oval same as other attributes however the text of key attribute is underlined.<br><img src="https://learningmonkey.in/wp-content/uploads/2021/10/Key-Attributes-of-an-Entity-Type-Ex-2.png"height="200"width="400"><br><h3>2.Composite attribute:</h3>An attribute that is a combination of other attributes is known as composite attribute. For example, In student entity, the student address is a composite attribute as an address is composed of other attributes such as pin code, state, country. <br><img src="https://www.scaler.com/topics/images/composite-attribute-in-dbms-thumbnail.webp "height="200"width="400">
+        <h3>3. Multivalued attribute: </h3>An attribute that can hold multiple values is known as multivalued attribute. It is represented with double ovals in an ER Diagram.<br><h3>Example:-</h3>A person can have more than one phone numbers so the phone number attribute is multivalued. <br><h3>4. Derived attribute: </h3>A derived attribute is one whose value is dynamic and derived from another attribute. It is represented by dashed oval in an ER Diagram.<h3>Example:-</h3>– Person age is a derived attribute as it changes over time and can be derived from another attribute (Date of birth). 
+        <h2>Relationships</h2>relationship is a connection or association between two or more entities (tables) that shows how the data in one entity relates to the data in another.A relationship in DBMS defines how tables are logically connected to maintain data consistency and avoid redundancy.<br>A relationship is represented by diamond shape in ER diagram, it shows the relationship among entities. There are four types of cardinal relationships:<br>
+        <ol><li>One to One(1:1) </li><li>One to Many </li><li>Many to One </li><li>Many to Many</li></ol><br><h3>1. One to One Relationship(1:1)</h3>When a single instance of an entity is associated with a single instance of another entity then it is called one to one relationship.Each record in one table is linked to only one record in another table.<h3>Example:-</h3> a person has only one passport and a passport is given to one person.<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMwUciD1qj1LwLOOB7pRwfV0NKhmJB_qL59M-zfGmMnxVdQ48EYonuCLXkqTNXSaKnCw&usqp=CAU"><h3>2. One to Many Relationship</h3>When a single instance of an entity is associated with more than one instances of another entity
+then it is called one to many relationship.A record in one table can be linked with multiple records in another table.<br><h3>Example:-</h3> a customer can place many orders but a order cannot be placed by many customers.<br><img src="https://creately.com/static/assets/guides/one-to-many-relationships-in-er-diagrams/1-to-many-relationships-in-erd-crows-foot-notation.webp" height="200"width="400"><br><h3>3. Many to One Relationship </h3>When more than one instances of an entity is associated with a single instance of another entity then it is called many to one relationship.Multiple records in one table are linked to a single record in another table.<h3>Example:-</h3>many students can study in a single college but a student cannot study in many colleges at the same time.<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpwIyqfj1jY-WQXocYqcTKV612TZG9WTMPMg&s"><br><h3>4. Many to Many Relationship</h3>When more than one instances of an entity is associated with more than one instances of another entity then it is called many to many relationship.Records in both tables can be linked with multiple records in the other.<br><h3>Example:-</h3> a can be assigned to many projects and a project can be assigned to many students. <br><img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920133746/manytomany.jpg">
+ <h2>Generalization</h2><p><b>Generalization</b> is a process in which the common attributes of more than one entities form a new entity. This newly formed entity is called generalized entity.<h3>Generalization Example :-</h3>Lets say we have two entities Student and Teacher. Attributes of Entity Student are: Name, Address & Grade Attributes of Entity Teacher are: Name, Address & Salary<br><b>The ER diagram before generalization looks like this:</b> <br><img src="https://beginnersbook.com/wp-content/uploads/2018/11/DBMS_Generalization.png"><br>These two entities have two common attributes: Name and Address, we can make a generalized entity with these common attributes. Lets have a look at the ER model after generalization.<br><b>The ER diagram after generalization: </b>We have created a new generalized entity Person and this entity has the common attributes of both the entities. As you can see in the following ER diagram that after the generalization process the entities Student and Teacher only has the specialized attributes Grade and Salary respectively and their common attributes (Name & Address) are now associated with a new entity Person which is in the relationship with both the entities (Student & Teacher). <br><img src="https://noidatut.com/dbms/generalization1.png"><br><strong><U>NOTE:-</U></strong><br>1. Generalization uses bottom-up approach where two or more lower level entities combine
+together to form a higher level new entity.<br>2. The new generalized entity can further combine together with lower level entity to create a
+further higher level generalized entity.
+<h2>Specialization</h2><br><b>Specialization</b> is a process in which an entity is divided into sub-entities. You can think of it as a reverse process of generalization, in generalization two entities combine together to form a new higher level entity. Specialization is a top-down process.<br>The idea behind Specialization is to find the subsets of entities that have few distinguish attributes. <b>For example – </b>Consider an entity employee which can be further classified as subentities Technician, Engineer & Accountant because these sub entities have some distinguish attributes.<br><h3>Specialization Example</h3> In this diagram, we can see that we have a higher level entity “Employee” which we have divided in sub entities “Technician”, “Engineer” & “Accountant”. All of these are just an employee of a company, however their role is completely different and they have few different attributes. Just for the example, I have shown that Technician handles service requests, Engineer works on a project and Accountant handles the credit & debit details. All of these three employee types have few attributes common such as name & salary which we had left associated with the parent entity “Employee” as shown in the above diagram.<br><img src="https://www.noidatut.com/dbms/specialization.png"><br><br><h2>Aggregration</h2>Aggregation is a process in which a single entity alone is not able to make sense in arelationship so the relationship of two entities acts as one entity. I know it sounds confusing but don’t worry the example we will take, will clear all the doubts. <br><h3>Aggregration Example </h3>In real world, we know that a manager not only manages the employee working under them but he has to manage the project as well. In such scenario if entity “Manager” makes a “manages” relationship with either “Employee” or “Project” entity alone then it will not make any sense because he has to manage both. In these cases the relationship of two entities acts as one entity. In our example, the relationship “Works-On” between “Employee” & “Project” acts as one entity that has a relationship “Manages” with the entity “Manager”. <br><img src="https://www.tutorialspoint.com/assets/questions/images/177227-1533029034.png">
+  </p>
+</div>
+<!--Tab 5-->
+   <div id="relational" class="tab-content">
+    <h2>Relational Model</h2>
+    <p>The relational model in DBMS is an abstract model used to organize and manage the data stored in a database. It stores data in two-dimensional inter-related tables, also known as relations in which each row represents an entity and each column represents the properties of the entity.<br>The relational model for database management is an approach to logically represent and manage the data stored in a database. In this model, the data is organized into a <mark>collection of two-dimensional inter-related tables, also known as relations.</mark> Each relation is a collection of columns and rows, where the column represents the attributes of an entity and the rows (or tuples) represent the records.<br>The purpose of the relational model is to provide a declarative method for specifying data and queries: users directly state what information the database contains and what information they want from it, and let the database management system software take care of describing data structures for storing the data and retrieval procedures for answering queries.<br><img src="https://www.boardinfinity.com/blog/content/images/2022/12/Your-paragraph-text--90-.jpg" height="400"width="800"><br><h3>What is Tuple in Relational DBMS?</h3>A <b>tuple</b> refers to a single row or record in a database table. It is an ordered set of values representing a specific entity or object. Each attribute or column in a table corresponds to a value in the tuple.<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Relational_database_terms.svg/640px-Relational_database_terms.svg.png"><h3>Domain</h3>Domains in the context of a database refer to the set of allowable values that a particular attribute or field can take. They define the data type and constraints for the attribute, ensuring data integrity and consistency. Domains help ensure that only valid and acceptable data is stored in the database.<br><img src="https://www.boardinfinity.com/blog/content/images/2023/05/Domain-Constraint-DBMS-1.png"height="200"width="400">
+<h2>Keys</h2><br>keys are attributes or sets of attributes used to uniquely identify rows (records) in a table and establish relationships between tables. They are essential for data integrity, preventing duplication, and facilitating efficient data retrieval and management.<br>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSenwo4wTL5qSZ9US8EorwlkN7FqrwHlytFlQ&s"><br>
+<br><h3>Primary Key</h3>A Primary Key in a Database Management System (DBMS) is a column or a set of columns that uniquely identifies each record (or row) within a table. It ensures data integrity by preventing duplicate values and providing a guaranteed way to access specific data. Primary keys can be natural keys, like a customer's Social Security Number, or surrogate keys, such as an auto-generated ID number. <h3>example</h3>In a Students table, StudentID can be the primary key.<br><h3>Candidate Key</h3>a candidate key is a minimal set of attributes (columns) that can uniquely identify each record (row) in a table, and it is also a potential candidate for being the primary key. A table can have multiple candidate keys, each satisfying the requirements of uniqueness and non-nullability, but only one can be chosen as the official primary key for the table. <h3>Example:</h3>In Students(StudentID, Email), both StudentID and Email are candidate keys.<h3>Super Key</h3> Super Key is a set of one or more attributes (columns) that, when taken together, can uniquely identify each tuple (row) in a table. A super key can include redundant attributes that are not necessary for unique identification, as long as the entire set still uniquely identifies each record. <h3>Example</h3>(StudentID, Name) is a super key if StudentID is unique.<br><h3>Foreign Key</h3>Foreign Key is a column (or set of columns) in one table that creates a link to the Primary Key of another table, establishing a relationship between them. The table containing the foreign key is known as the "child" or "referencing" table, while the table with the primary key is the "parent" or "referenced" table. Foreign keys ensure referential integrity by preventing operations that would break the link between the tables, such as adding a value to the foreign key column that doesn't exist in the parent table's primary key column. <h3>Example</h3>In Orders(CustomerID) referencing Customers(CustomerID).<br><h3>Composite Key</h3>omposite key is a candidate key that consists of two or more attributes (columns) that, when combined, uniquely identify each record (row) in a table. No single attribute within the composite key can uniquely identify a record on its own; it is the combination of these attributes that ensures uniqueness. <h3>Example</h3>In an Enrollment(StudentID, CourseID), the combination of both columns uniquely identifies a record.<br><h3>Unique Key</h3>A unique key in a database management system (DBMS) is a condition that is assigned to a certain number of dataset columns to guarantee that the information stored in those columns is distinct for every row in the table<h3>Example</h3>Email field in Users table.<br><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAnn3yOD5nQ-ZA_2ZR2VuIjpNlpNHGP7VY2HS_HZ37jnwSUtRwuse1ZkD7YNJW3MYB4xzvSYrOfLID9RaQVenIZvOqA_0QHHCgkaguQYfPRPCWGxYAeI9WQTaqzADeLrPiS_VU5DrNi14/s1148/what+is+primary+key+in+database.png" height="400"width="800">
+<h2>Relational Integrity Constraint</h2>Relational integrity constraints are rules that maintain the accuracy, validity, and consistency of data in a relational database.They make sure that data entered into the database is meaningful and reliable.<h3>Types of Constraints</h3>
+<ul>
+  <li>Domain Constraint</li>
+   <li>Key Constraint</li>
+    <li>Entity Integrity</li>
+     <li>Referential Integrity</li>
+</ul>
+<h2>Domain Constraint</h2>A domain constraint specifies that the values of an attribute must come from a predefined domain. In simple terms, it defines the valid data type, range, or format for each column in a table.<h3>Example</h3>if we define a Student table, the Age attribute must be an integer between 1 and 120, while the Name attribute must consist of alphabetic characters. Similarly, an Email attribute must follow the correct email pattern.<br>Valid Case: Age = 20 (✔ within range)<br>Invalid Case: Age = -5 (❌ violates domain constraint)<br>
+<h2>Key Constraint</h2>A key constraint ensures that each record in a table can be uniquely identified. It prevents duplicate entries by enforcing that no two rows can have the same value for a key attribute.<h3>Example</h3>The most common example is the primary key, which uniquely identifies each tuple (row) in a relation. For instance, in an Employee table, EmpID can be the primary key, ensuring that no two employees share the same identifier.<br>Valid Case: Two employees with EmpID = 101 and EmpID = 102<br>Invalid Case: Two employees both having EmpID = 101.<br>
+<h2>Entity Integrity</h2>The entity integrity constraint ensures that the primary key of a table cannot be NULL. Since the primary key is used to uniquely identify each record, it must always hold a valid value.<h3>Example</h3>in a Books table with BookID as the primary key, every book must have a valid BookID. If BookID is left NULL, the database would not be able to uniquely identify that record.<br>Valid Case: BookID = 201<br>Invalid Case: BookID = NULL (violates entity integrity)<br>
+<h2>Referential Integrity</h2>A referential integrity constraint ensures consistency between two related tables. It requires that a foreign key in one table must either match an existing primary key in another table or be NULL.<h3>Example</h3>For example, consider two tables: Customers(CustomerID, Name) and Orders(OrderID, CustomerID). Here, CustomerID in the Orders table is a foreign key that references CustomerID in the Customers table. This means that an order can only exist if it belongs to a valid customer.<br>Valid Case: An order with CustomerID = 5, where customer 5 exists<br>Invalid Case: An order with CustomerID = 999, where customer 999 does not exist.This constraint prevents orphan records, ensuring that relationships between tables remain valid.<br>
+</p>
+   </div>
+<div id="algebra" class="tab-content">
+  <h2>Relational Algebra</h2><p>Relational Algebra in DBMS (Database Management System) is a procedural query language that works on relations (tables). It defines a set of operations that take one or two relations as input and produce a new relation as output. These operations help us retrieve and manipulate data stored in relational databases.<br>Relational algebra in a DBMS is a procedural query language that uses mathematical operations, called operators, to manipulate data stored in relational tables (relations). It takes relation instances as input and produces new relation instances as output, allowing for the retrieval and transformation of data in a structured, logical way.<br><h3>Key Points about Relational Algebra:</h3>-It works on tuples (rows) in relations<br>-The result of every operation is always a new relation (closure property).<br>-It is procedural → tells how to get the result, unlike SQL which is declarative.<br>-Provides the foundation of SQL.
+ <br> <br>Relational Algebra came in 1970 and was given by Edgar F. Codd (Father of DBMS). It is also known as Procedural Query Language(PQL) as in PQL, a programmer/user has to mention two things, "What to Do" and "How to Do".<br>Suppose our data is stored in a database, then relational algebra is used to access the data from the database.<br>The First thing is we have to access the data, this needs to be specified in the query as "What to Do", but we have to also specify the method/procedure in the query that is "How to Do" or how to access the data from the database.<br><br><h2>Types of Relational Operations</h2>In Relational Algebra, we have two types of Operations.<br>-Basic Operations<br>-Derived Operations<br><br><img src="https://www.gatevidyalay.com/wp-content/uploads/2018/08/Relational-Algebra-Operators.png"><br>In DBMS, basic operations of relational algebra are the fundamental building blocks used to manipulate and retrieve data from relational tables (relations). These operations always produce a new relation as output. They are procedural, meaning they tell the system how to get the result, unlike SQL which is more declarative.<br><h2>a) Selection (σ)</h2>Select operation is done by Selection Operator which is represented by "sigma"(σ). It is used to retrieve tuples(rows) from the table where the given condition is satisfied. It is a unary operator means it requires only one operand.<br><h3>Notation : σ p(R)</h3>Where σ is used to represent SELECTION<br>R is used to represent RELATION<br>p is the logic formula<br>Let's understand this with an example:<br>Suppose we want the row(s) from STUDENT Relation where "AGE" is 20.<br>
+<div style="background-color:black; color:green; padding: 15px; border-radius: 5px; font-family: monospace;">σ_age > 20(Student)</div><table border="1" cellpadding="50%" cellspacing="2px"><br>
+  <tr>
+    <th>ROLL</th>
+    <th>NAME</th>
+    <th>AGE</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Aman</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Harsh</td>
+    <td>20</td>
+  </tr>
+</table>
+<br><h2>b) Projection (π)</h2>Project operation is done by Projection Operator which is represented by "pi"(∏). It is used to retrieve certain attributes(columns) from the table. It is also known as vertical partitioning as it separates the table vertically. It is also a unary operator.<br><b>Notation : ∏ a(r)</b><br>Where ∏ is used to represent PROJECTION<br>r is used to represent RELATION<br>a is the attribute list<br>Let's understand this with an example:<br>Suppose we want the names of all students from STUDENT Relation.<br><div style="background-color:black; color:green; padding: 15px; border-radius: 5px; font-family: monospace;">∏ NAME(STUDENT) </div>This will return the following output:<br>
+<table border="1" cellpadding="50%" cellspacing="2px"><br>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td>Aman</td>
+     <td>Atul</td>
+      <td>Baljeet</td>
+       <td>Ganesh</td>
+  </tr>
+
+</p>
+
+
+
+  <script>
+    function showContent(tabId) {
+      document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
