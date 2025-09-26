@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduLook | Learn Smarter</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #007BFF;
+      --light-blue: #E6F0FF;
+      --dark-blue: #004AAD;
+      --white: #ffffff;
+      --text-dark: #222;
+      --text-light: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--dark-blue);
+      padding: 20px 40px;
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #dff0ff;
+    }
+
+    .search-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-box input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: var(--blue);
+      color: var(--white);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-box button:hover {
+      background: var(--dark-blue);
+    }
+
+    .hero {
+      background-color: var(--light-blue);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--dark-blue);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-blue);
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: var(--blue);
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .course-card {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .course-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .course-content h3 {
+      margin-bottom: 10px;
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+    }
+
+    .course-content p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    footer {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-box {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-box input {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">EduLook</div>
+      <nav>
+        <form class="search-box">
+          <input type="text" placeholder="Search for courses..." />
+          <button type="submit">🔍</button>
+        </form>
+        <a href="#">Home</a>
+        <a href="#">Tutorials</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Learn Anywhere, Anytime</h1>
+    <p>Join over 1 million learners and start your journey with expert-led courses.</p>
+    <button class="btn-primary">Explore Courses</button>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="section">
+    <h2>Our Courses</h2>
+    <div class="courses">
+
+      <!-- Course 1 -->
+      <div class="course-card">
+        <a href="c.html">
+        <img src="https://www.londonacademyofit.co.uk/images/courses/c_programming_for_beginners.jpg" alt="Data Science Course"></a>
+        <div class="course-content">
+          <h3>C programming Language</h3>
+          <p>Learn Basic C language,and improve real-world  skills.</p>
+        </div>
+      </div>
+ <!-- Course 2 -->
+      <div class="course-card">
+        <a href="dbms.html">
+        <img src="https://www.aiiits.com/assets/img/course/career_course/data-base-man-system.jpg" alt="UI/UX Design Course"></a>
+        <div class="course-content">
+          <h3>DBMS</h3>
+          <p>Master Database Management Systems to design, manage, and query relational databases efficiently using SQL and advanced concepts.</p>
+          
+        </div>
+      </div>
+      
+       <!-- Course 3 -->
+      <div class="course-card">
+        <img src="https://miro.medium.com/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg" alt="Web Development Course">
+        <div class="course-content">
+          <h3>Web Development</h3>
+          <p>Build responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+        </div>
+      </div>
+
+      <!-- Course 4 -->
+      <div class="course-card">
+        <img src="https://t4.ftcdn.net/jpg/02/92/83/57/360_F_292835773_oImixQGFKLpOPnjfsbesHyqdjOk5hsxL.jpg" alt="Java Language">
+        <div class="course-content">
+          <h3>Java Language</h3>
+          <p>“Learn Java programming from basics to advanced concepts, building real-world applications and mastering object-oriented development.”</p>
+        </div>
+      </div>
+      <!-- Course 5 -->
+      <div class="course-card">
+        <img src="https://www.cm-alliance.com/hs-fs/hubfs/60776739_l%20(1).webp?width=1170&name=60776739_l%20(1).webp" alt="Cybersecurity Course">
+        <div class="course-content">
+          <h3>Cybersecurity</h3>
+          <p>Understand online threats, ethical hacking, network security, and digital safety.</p>
+        </div>
+      </div>
+
+      <!-- Course 6 -->
+      <div class="course-card">
+        <img src="https://cdn.shopaccino.com/igmguru/products/python-training--igmguru-64626207279351_m.jpg?v=531" alt="Mobile App Development Course">
+        <div class="course-content">
+          <h3>Python</h3>
+          <p>Learn Python programming to build web apps, automate tasks, analyze data, and develop real-world projects with ease.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SmartLearn. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
